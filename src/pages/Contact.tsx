@@ -59,7 +59,7 @@ function ContactInfo() {
       <div className="grid gap-6">
         {/* Email */}
         <a
-          href="mailto:hello@insureai.com"
+          href="arvindsiram11@gmail.com"
           className="flex items-center gap-5 p-6 rounded-2xl bg-card border border-border/50 hover:border-accent/50 transition-colors"
         >
           <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center">
