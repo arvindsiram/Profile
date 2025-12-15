@@ -1,69 +1,16 @@
-import { useState } from "react";
 import { Layout } from "@/components/layout/Layout";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { 
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { 
   Mail, 
   Linkedin, 
   Calendar, 
   Clock, 
   Shield, 
-  CheckCircle2,
-  Send
+  CheckCircle2 
 } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
-import { useToast } from "@/hooks/use-toast";
-
-const services = [
-  "AI Chatbot",
-  "Voice Agent",
-  "Client Portal",
-  "Full Suite",
-  "Not Sure Yet",
-];
 
 export default function Contact() {
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
-    service: "",
-    message: "",
-  });
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
-    toast({
-      title: "Message sent!",
-      description: "Thank you for reaching out. I'll respond within 24 hours.",
-    });
-
-    setFormData({
-      name: "",
-      email: "",
-      company: "",
-      service: "",
-      message: "",
-    });
-    setIsSubmitting(false);
-  };
-
   return (
     <Layout>
       {/* Hero */}
@@ -75,161 +22,22 @@ export default function Contact() {
               Contact
             </span>
             <h1 className="text-display-lg text-primary-foreground mb-6">
-              Let's Talk About Your Goals
+              Let’s Connect
             </h1>
             <p className="text-body-lg text-primary-foreground/80 max-w-2xl mx-auto">
-              Ready to transform your brokerage? Schedule a free consultation 
-              to discuss how AI automation can work for you.
+              Prefer direct conversations. Reach out via email or LinkedIn and we’ll take it from there.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* Contact Options */}
       <section className="py-20 md:py-28">
-        <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-            {/* Form */}
-            <ContactForm 
-              formData={formData}
-              setFormData={setFormData}
-              handleSubmit={handleSubmit}
-              isSubmitting={isSubmitting}
-            />
-
-            {/* Info */}
-            <ContactInfo />
-          </div>
+        <div className="container max-w-4xl">
+          <ContactInfo />
         </div>
       </section>
     </Layout>
-  );
-}
-
-interface ContactFormProps {
-  formData: {
-    name: string;
-    email: string;
-    company: string;
-    service: string;
-    message: string;
-  };
-  setFormData: React.Dispatch<React.SetStateAction<ContactFormProps["formData"]>>;
-  handleSubmit: (e: React.FormEvent) => void;
-  isSubmitting: boolean;
-}
-
-function ContactForm({ formData, setFormData, handleSubmit, isSubmitting }: ContactFormProps) {
-  const { ref, isVisible } = useScrollAnimation<HTMLFormElement>();
-
-  return (
-    <form
-      ref={ref}
-      onSubmit={handleSubmit}
-      className={cn(
-        "bg-card rounded-2xl p-8 shadow-lg border border-border/50 opacity-0",
-        isVisible && "animate-fade-up"
-      )}
-    >
-      <h2 className="text-heading-xl text-foreground mb-2">Send a Message</h2>
-      <p className="text-body text-muted-foreground mb-8">
-        Fill out the form below and I'll get back to you within 24 hours.
-      </p>
-
-      <div className="space-y-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <div>
-            <label htmlFor="name" className="block text-body-sm font-medium text-foreground mb-2">
-              Name *
-            </label>
-            <Input
-              id="name"
-              value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              placeholder="Your name"
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="email" className="block text-body-sm font-medium text-foreground mb-2">
-              Work Email *
-            </label>
-            <Input
-              id="email"
-              type="email"
-              value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              placeholder="you@company.com"
-              required
-            />
-          </div>
-        </div>
-
-        <div>
-          <label htmlFor="company" className="block text-body-sm font-medium text-foreground mb-2">
-            Brokerage Name
-          </label>
-          <Input
-            id="company"
-            value={formData.company}
-            onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-            placeholder="Your brokerage"
-          />
-        </div>
-
-        <div>
-          <label htmlFor="service" className="block text-body-sm font-medium text-foreground mb-2">
-            Service Interest
-          </label>
-          <Select
-            value={formData.service}
-            onValueChange={(value) => setFormData({ ...formData, service: value })}
-          >
-            <SelectTrigger>
-              <SelectValue placeholder="Select a service" />
-            </SelectTrigger>
-            <SelectContent>
-              {services.map((service) => (
-                <SelectItem key={service} value={service}>
-                  {service}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </div>
-
-        <div>
-          <label htmlFor="message" className="block text-body-sm font-medium text-foreground mb-2">
-            Message *
-          </label>
-          <Textarea
-            id="message"
-            value={formData.message}
-            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-            placeholder="Tell me about your goals and challenges..."
-            rows={5}
-            required
-          />
-        </div>
-
-        <Button 
-          type="submit" 
-          variant="accent" 
-          size="lg" 
-          className="w-full"
-          disabled={isSubmitting}
-        >
-          {isSubmitting ? (
-            "Sending..."
-          ) : (
-            <>
-              Send Message
-              <Send className="w-4 h-4" />
-            </>
-          )}
-        </Button>
-      </div>
-    </form>
   );
 }
 
@@ -239,68 +47,81 @@ function ContactInfo() {
   return (
     <div
       ref={ref}
-      className={cn("opacity-0", isVisible && "animate-fade-up delay-200")}
+      className={cn(
+        "opacity-0 space-y-10",
+        isVisible && "animate-fade-up"
+      )}
     >
-      <h2 className="text-heading-xl text-foreground mb-6">Other Ways to Connect</h2>
+      <h2 className="text-heading-xl text-foreground text-center">
+        Get in Touch
+      </h2>
 
-      <div className="space-y-6 mb-12">
+      <div className="grid gap-6">
+        {/* Email */}
         <a
-          href="mailto:contact@example.com"
-          className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border/50 hover:border-accent/50 transition-colors"
+          href="mailto:hello@insureai.com"
+          className="flex items-center gap-5 p-6 rounded-2xl bg-card border border-border/50 hover:border-accent/50 transition-colors"
         >
-          <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
-            <Mail className="w-6 h-6 text-accent" />
+          <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center">
+            <Mail className="w-7 h-7 text-accent" />
           </div>
           <div>
             <p className="text-heading-sm text-foreground">Email</p>
-            <p className="text-body text-muted-foreground">contact@example.com</p>
+            <p className="text-body text-muted-foreground">
+              hello@insureai.com
+            </p>
           </div>
         </a>
 
+        {/* LinkedIn */}
         <a
           href="https://linkedin.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border/50 hover:border-accent/50 transition-colors"
+          className="flex items-center gap-5 p-6 rounded-2xl bg-card border border-border/50 hover:border-accent/50 transition-colors"
         >
-          <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
-            <Linkedin className="w-6 h-6 text-accent" />
+          <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center">
+            <Linkedin className="w-7 h-7 text-accent" />
           </div>
           <div>
             <p className="text-heading-sm text-foreground">LinkedIn</p>
-            <p className="text-body text-muted-foreground">Connect with me</p>
+            <p className="text-body text-muted-foreground">
+              Connect and message me directly
+            </p>
           </div>
         </a>
 
+        {/* Optional: Calendly */}
         <a
           href="#"
-          className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border/50 hover:border-accent/50 transition-colors"
+          className="flex items-center gap-5 p-6 rounded-2xl bg-card border border-border/50 hover:border-accent/50 transition-colors"
         >
-          <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
-            <Calendar className="w-6 h-6 text-accent" />
+          <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center">
+            <Calendar className="w-7 h-7 text-accent" />
           </div>
           <div>
             <p className="text-heading-sm text-foreground">Book a Call</p>
-            <p className="text-body text-muted-foreground">Schedule via Calendly</p>
+            <p className="text-body text-muted-foreground">
+              Schedule a 30-minute discovery call
+            </p>
           </div>
         </a>
       </div>
 
-      {/* Trust indicators */}
-      <div className="bg-muted/50 rounded-2xl p-6">
-        <h3 className="text-heading-sm text-foreground mb-4">What to Expect</h3>
+      {/* Trust Indicators */}
+      <div className="bg-muted/50 rounded-2xl p-6 max-w-xl mx-auto">
         <ul className="space-y-3">
           <li className="flex items-center gap-3 text-body text-muted-foreground">
-            <Clock className="w-5 h-5 text-accent flex-shrink-0" />
+            <Clock className="w-5 h-5 text-accent" />
             Response within 24 hours
           </li>
           <li className="flex items-center gap-3 text-body text-muted-foreground">
-            <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" />
-            Free 30-minute discovery call
+            <CheckCircle2 className="w-5 h-5 text-accent" />
+            Free discovery call
           </li>
           <li className="flex items-center gap-3 text-body text-muted-foreground">
-            <Shield className="w-5 h-5 text-accent flex-shrink-0" />
-            Your information is kept confidential
+            <Shield className="w-5 h-5 text-accent" />
+            Conversations kept confidential
           </li>
         </ul>
       </div>
