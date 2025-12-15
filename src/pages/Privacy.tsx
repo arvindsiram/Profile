@@ -40,8 +40,8 @@ export default function Privacy() {
               <h2 className="text-heading-lg text-foreground mt-8">Contact Us</h2>
               <p>
                 If you have any questions about this Privacy Policy, please contact us at{" "}
-                <a href="mailto:privacy@insureai.com" className="text-accent hover:underline">
-                  privacy@insureai.com
+                <a href="mailto:privacy@example.com" className="text-accent hover:underline">
+                  privacy@example.com
                 </a>
               </p>
             </div>

@@ -58,7 +58,7 @@ export default function Projects() {
               Practical AI Automation Systems
             </h1>
             <p className="text-body-lg text-primary-foreground/80 max-w-2xl mx-auto">
-              Real-world automation projects built for insurance workflows—focused on
+              Sample automation projects demonstrating solutions for insurance workflows—focused on
               efficiency, reliability, and usability.
             </p>
           </div>

@@ -6,6 +6,22 @@ import { cn } from "@/lib/utils";
 
 const services = [
   {
+    icon: LayoutDashboard,
+    title: "AI Automations",
+    description:
+      "Custom AI-powered automations designed around your insurance workflows — from renewals and lead management to operations, reporting, and internal processes.",
+      features: [
+        "Workflow automation across insurance operations",
+        "Event-based triggers & AI-driven logic",
+        "Email, chat, voice & system integrations",
+        "Dashboards, reports & internal tools",
+        "CRM, database & API integrations",
+        "Custom-built automations tailored to your brokerage",
+      ],      
+    href: "/services#automations",
+    color: "bg-primary/10 text-primary",
+  },  
+  {
     icon: MessageSquare,
     title: "AI Chatbots",
     description:
@@ -54,7 +70,7 @@ export function ServicesSection() {
             Purpose-Built AI for Insurance
           </h2>
           <p className="text-body-lg text-muted-foreground">
-            Our solutions are designed specifically for the insurance industry, 
+            Solutions designed specifically for the insurance industry, 
             understanding the unique workflows, compliance requirements, and client expectations.
           </p>
         </div>

@@ -27,7 +27,7 @@ export function CTASection() {
             </h2>
             <p className="text-body-lg text-primary-foreground/80 mb-10 max-w-2xl mx-auto">
               Schedule a free 30-minute consultation to discover how AI automation 
-              can reduce your costs and improve client satisfaction. No commitment required.
+              can help reduce costs and improve efficiency in your brokerage. No commitment required.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">

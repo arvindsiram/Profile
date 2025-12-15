@@ -21,29 +21,29 @@ export default function Terms() {
 
               <h2 className="text-heading-lg text-foreground mt-8">Services</h2>
               <p>
-                InsureAI provides AI automation consulting services for insurance brokerages, 
+                We provide AI automation consulting services for insurance brokerages, 
                 including but not limited to chatbot implementation, voice agent solutions, 
                 and custom client portal development.
               </p>
 
               <h2 className="text-heading-lg text-foreground mt-8">Intellectual Property</h2>
               <p>
-                All content, features, and functionality of our services are owned by InsureAI 
+                All content, features, and functionality of our services are owned by us 
                 and are protected by international copyright, trademark, and other intellectual 
                 property laws.
               </p>
 
               <h2 className="text-heading-lg text-foreground mt-8">Limitation of Liability</h2>
               <p>
-                InsureAI shall not be liable for any indirect, incidental, special, consequential, 
+                We shall not be liable for any indirect, incidental, special, consequential, 
                 or punitive damages resulting from your use of our services.
               </p>
 
               <h2 className="text-heading-lg text-foreground mt-8">Contact Us</h2>
               <p>
                 If you have any questions about these Terms, please contact us at{" "}
-                <a href="mailto:legal@insureai.com" className="text-accent hover:underline">
-                  legal@insureai.com
+                <a href="mailto:legal@example.com" className="text-accent hover:underline">
+                  legal@example.com
                 </a>
               </p>
             </div>

@@ -245,7 +245,7 @@ function ContactInfo() {
 
       <div className="space-y-6 mb-12">
         <a
-          href="mailto:hello@insureai.com"
+          href="mailto:contact@example.com"
           className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border/50 hover:border-accent/50 transition-colors"
         >
           <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
@@ -253,7 +253,7 @@ function ContactInfo() {
           </div>
           <div>
             <p className="text-heading-sm text-foreground">Email</p>
-            <p className="text-body text-muted-foreground">hello@insureai.com</p>
+            <p className="text-body text-muted-foreground">contact@example.com</p>
           </div>
         </a>
 

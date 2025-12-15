@@ -10,13 +10,13 @@ const values = [
     icon: Target,
     title: "Clear Niche Focus",
     description:
-      "We build AI automations specifically for insurance brokerages—renewals, follow-ups, client communication, and internal workflows.",
+      "I build AI automations specifically for insurance brokerages—renewals, follow-ups, client communication, and internal workflows.",
   },
   {
     icon: Heart,
     title: "Human-First Automation",
     description:
-      "Automation should reduce workload, not remove relationships. Our systems support brokers, not replace them.",
+      "Automation should reduce workload, not remove relationships. My systems support brokers, not replace them.",
   },
   {
     icon: Lightbulb,

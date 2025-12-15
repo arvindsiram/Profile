@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 const trustPoints = [
-  "30% reduction in operational costs",
-  "24/7 automated client support",
-  "50+ insurance brokerages transformed",
+  "24/7 automated support capabilities",
+  "Custom-built for insurance workflows",
+  "Free consultation to explore solutions",
 ];
 
 export function HeroSection() {
@@ -52,9 +52,9 @@ export function HeroSection() {
               </Link>
             </Button>
             <Button size="xl" variant="hero-outline" asChild>
-              <Link to="/case-studies">
-                <Play className="w-5 h-5" />
-                View Success Stories
+              <Link to="/projects">
+                View Sample Projects
+                <ArrowRight className="w-5 h-5" />
               </Link>
             </Button>
           </div>

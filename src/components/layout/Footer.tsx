@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Bot, Linkedin, Mail, ArrowUpRight } from "lucide-react";
+import { Linkedin, Mail, ArrowUpRight } from "lucide-react";
 
 const footerLinks = {
   services: [
@@ -9,8 +9,7 @@ const footerLinks = {
   ],
   company: [
     { name: "About", href: "/about" },
-    { name: "Case Studies", href: "/case-studies" },
-    { name: "Blog", href: "/blog" },
+    { name: "Projects", href: "/projects" },
     { name: "Contact", href: "/contact" },
   ],
   legal: [
@@ -27,10 +26,7 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-accent flex items-center justify-center">
-                <Bot className="w-5 h-5 text-accent-foreground" />
-              </div>
-              <span className="text-heading-sm font-bold">InsureAI</span>
+              <span className="text-heading-sm font-bold">AI Brokerage Insights</span>
             </Link>
             <p className="text-primary-foreground/70 text-body mb-6 max-w-xs">
               Specialized AI automation solutions designed exclusively for insurance brokerages.
@@ -46,7 +42,7 @@ export function Footer() {
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href="mailto:hello@insureai.com"
+                href="mailto:contact@example.com"
                 className="w-10 h-10 rounded-lg bg-primary-foreground/10 flex items-center justify-center hover:bg-primary-foreground/20 transition-colors"
                 aria-label="Email"
               >
@@ -109,7 +105,7 @@ export function Footer() {
 
         <div className="border-t border-primary-foreground/20 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-primary-foreground/60 text-body-sm">
-            © {new Date().getFullYear()} InsureAI. All rights reserved.
+            © {new Date().getFullYear()} AI Brokerage Insights. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             {footerLinks.legal.map((link) => (
